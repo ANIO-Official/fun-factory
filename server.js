@@ -5,7 +5,15 @@ const port = 3000
 const apiClient = require('./apiClient')
 
 app.get('/', (req, res) =>{
-    res.send("<h1>Landing Test</h1>")
+    res.send(`
+        <div style="text-align: center; margin-top: 2rem;">
+        <h1>Fun 'Fact'ory!</h1>
+        <p>(☞ﾟヮﾟ)☞ Eh,  Get it? ☜(ﾟヮﾟ☜)</p>
+        <p><i>Wanna hear a cool fact?</i></p>
+        <a href= "http://localhost:3000/api/fun-fact"><button>Go To Fun Facts</button></a>
+        <p>Hint: You can refresh the next page to see another fact!</p>
+        </div>
+        `)
 })
 
 app.get('/api/fun-fact', async (req, res)=> {
