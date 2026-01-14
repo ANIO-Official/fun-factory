@@ -49,8 +49,6 @@ https://github.com/ANIO-Official/fun-factory
 
 ## Reflection
 
-After completing this activity, consider the following:
-
 **Why was it important to re-format the data from the Useless Facts API before sending it to your own client? What are the benefits of an API providing a clean, minimal response?**
 
 It is important to re-format data from the Useless Facts API to ensure that a client *only* recieves the necessary information. Transforming the data to a clean minimal response reduces the payload size, can remove sensitive data clients shouldn't see, and will make the response easier for the client to understand.
