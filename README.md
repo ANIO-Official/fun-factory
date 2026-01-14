@@ -51,10 +51,24 @@ https://github.com/ANIO-Official/fun-factory
 
 After completing this activity, consider the following:
 
-Why was it important to re-format the data from the Useless Facts API before sending it to your own client? What are the benefits of an API providing a clean, minimal response?
-In the catch block, why is it better to send a generic error message to the client instead of the actual error object from axios?
-How might you modify this application to get a fact in a different language if the external API supported it (e.g., with a query parameter like ?language=de)?
+**Why was it important to re-format the data from the Useless Facts API before sending it to your own client? What are the benefits of an API providing a clean, minimal response?**
 
+It is important to re-format data from the Useless Facts API to ensure that a client *only* recieves the necessary information. Transforming the data to a clean minimal response reduces the payload size, can remove sensitive data clients shouldn't see, and will make the response easier for the client to understand.
+
+---
+
+**In the catch block, why is it better to send a generic error message to the client instead of the actual error object from axios?**
+
+It is better to send a generic error message to the client instead of an actual error object from axios for better clarity. If you were to keep the error object, there is a high chance the client won't understand what is happening. Our jobs as developers is to not only be able to understand the error that returns but to also relay this information in simpler or layman's terms for better understanding.  
+
+---
+
+**How might you modify this application to get a fact in a different language if the external API supported it (e.g., with a query parameter like ?language=de)?**
+
+To retrieve facts of different languages, I would ensure that language is first an available option in the API. Then I would modify the axios request to specifically fetch random facts in the language requested by the client. How I would request this information depends on how the API's documentation describes how to access this information such as:
+```JS
+  const response = await apiClient.get('facts/random?l=de')
+```
 
 ### Useful resources
 
